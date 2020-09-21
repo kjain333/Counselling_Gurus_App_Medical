@@ -133,7 +133,7 @@ class _MainPageState extends State<MainPage> {
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.message),
           onPressed: (){
-            _launchURL("https://t.me/joinchat/AAAAAFcS7GP9ys7r7q-iVw");
+            _launchURL("https://t.me/joinchat/AAAAAEqb4HIHyUFDstk5Sg");
           },
         ),
         appBar: AppBar(

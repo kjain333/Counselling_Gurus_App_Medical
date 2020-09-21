@@ -43,7 +43,7 @@ List<String> cardHeadings = [
   "College Predictor",
   "Get your Rank",
   "Colleges",
-  "Branches",
+  "Streams",
   "Frequently Asked Questions",
   "Document Verification",
   "Preparations Notes",
@@ -60,7 +60,7 @@ List<String> buttonHeadings = [
   "Get Your College",
   "Get Your Rank",
   "Know About Your College",
-  "Explore Branches",
+  "Explore Streams",
   "Know More",
   "Verify",
   "Notes",
@@ -98,7 +98,7 @@ final paragraph =
     ["Predict and know the best colleges you can get at your rank.Results are based on previous years' data, student preferences,NIRF rankings and other parameters like placements,college infrastructure and other facilities.",
       "Get your rank calculated based on your percentile with utmost accuracy.These ranks are calculated with the help of complex formula similar to the one used by NTA to calculate AIRs and category ranks of lakhs of students.",
     "Get quick access to desired information about thousands of colleges across India.Different facts provided about various factors like placements, campus size,student strength,routes and distances are authentic and verified.",
-    "Get each and every detail about every engineering branch that intrigues you.We have a collection of 50+ branches that are offered in colleges across India.",
+    "Get each and every detail about every medical stream that intrigues you.We have a collection of all streams that are offered in colleges across India.",
     "Tired of googling every single small question that comes to your mind? Then you are at a right place! Get answers to all the common(and uncommon :p)questions asked by aspirants and also get it answered if you have one!",
     " Afraid and confused about the actual counselling process? Don't worry! We provide full document verification before the actual Counselling process so that lack of documents doesn't stop you from getting your dream college or branch",
     "Don't know if you are still prepared for the upcoming exams. Relax our mentors have specially design handwritten notes to help you with last minute revision and get an extra edge over others.",
@@ -280,7 +280,7 @@ class _HomePageState extends State<HomePage>
 
 
   Widget gridCard(index) {
-    if(index==6||index==8)
+    if(index==6||index==8||index==1||index==2||index==9)
       {
         return Container();
       }

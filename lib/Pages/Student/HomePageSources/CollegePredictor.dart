@@ -16,60 +16,46 @@ class CollegePredictor extends StatefulWidget {
     return _CollegePredictorState();
   }
 }
-
+var category='';
 class MyCollege {
   String a="";
   String b="";
   String c="";
   String d="";
   String e="";
-  String f="";
-  String g="";
-  String h="";
-  MyCollege({this.a,this.b,this.c,this.d,this.e,this.f,this.g,this.h});
+  MyCollege({this.a,this.b='',this.c='',this.d='',this.e=''});
   factory MyCollege.fromJson(Map<String,dynamic> json){
     return MyCollege(
-      a: json["Round No"],
-      b: json["Institute Name"],
-      c: json["Branch Name"],
-      d: json["Allotted Quota"],
-      e: json["Category"],
-      f: json["Seat Pool"],
-      g: json["Openning Rank"],
-      h: json["Closing Rank"],
+      a: json["clgName"],
+      b: (json["gen"]==null)?json["ur"]:json["gen"],
+      c: json["obc"],
+      d: json["sc"],
+      e: json["st"],
     );
   }
 }
 var topColleges = [
   {
-    "Round No": "7",
-    "Institute Name": "Indian Institute  of Technology Bombay",
-    "Branch Name": "Computer Science and Engineering (4 Years, Bachelor of Technology)",
-    "Allotted Quota": "AI",
-    "Category": "OPEN",
-    "Seat Pool": "Gender-Neutral",
-    "Openning Rank": "1",
-    "Closing Rank": "63"
+    "clgName": "MAULANA AZAD MEDICAL COLLEGE, NEW DELHI",
+    "gen": "32",
+    "obc": "148",
+    "sc": "896",
+    "st": "3494"
   },
   {
-    "Round No": "7",
-    "Institute Name": "Indian Institute  of Technology Delhi",
-    "Branch Name": "Computer Science and Engineering (4 Years, Bachelor of Technology)",
-    "Allotted Quota": "AI",
-    "Category": "OPEN",
-    "Seat Pool": "Gender-Neutral",
-    "Openning Rank": "2",
-    "Closing Rank": "93"
+    "clgName": "University College of Medical Sciences, Delhi",
+    "gen": "171",
+    "obc": "374",
+    "sc": "3231",
+    "st": "9021"
   },
   {
-    "Round No": "7",
-    "Institute Name": "Indian Institute  of Technology Madras",
-    "Branch Name": "Computer Science and Engineering (4 Years, Bachelor of Technology)",
-    "Allotted Quota": "AI",
-    "Category": "OPEN",
-    "Seat Pool": "Gender-Neutral",
-    "Openning Rank": "90",
-    "Closing Rank": "188"
+    "clgName": "VMMC AND SAFDARJUNG HOSPITAL, NEW DELHI",
+    "gen": "193",
+    "obc": "403",
+    "sc": "5617",
+    "st": "6010",
+    "pwd": ""
   },
 ];
 final myController = TextEditingController();
@@ -103,12 +89,12 @@ class _CollegePredictorState extends State<CollegePredictor> {
   //   }
   // }
 
-  List<String> categoryList = ["OBC-NCL", "GEN-EWS","OPEN", "OPEN (PwD)", "SC","ST"];
+  List<String> categoryList = ["OBC", "GEN","SC","ST","Pwd"];
   List<String> genderList = ["Gender-Neutral", "Female-Only"];
   List<DropdownMenuItem<String>> categoryDropDown;
   List<DropdownMenuItem<String>> genderDropDown;
   String selectedItem, selectedItem1;
-  var mains=0,advanded=0;
+  var bds=0,mbbs=0,vet=0;
 
   bool checkbox = false;
 
@@ -149,20 +135,21 @@ class _CollegePredictorState extends State<CollegePredictor> {
       selectedItem1 = item;
     });
   }
-  Future<MyCollege> createColleges(a,b,c) async {
+  Future<MyCollege> createColleges(a,b) async {
     print(a);
     var map = new Map<String, dynamic>();
     map['rank'] = a;
     map['category'] = b;
-    map['seatPool'] = c;
     final ioc = new HttpClient();
     ioc.badCertificateCallback = (X509Certificate cert,String host,int port)=>true;
     final http = new IOClient(ioc);
     var url;
-    if(mains==0)
-     url = 'https://counsellinggurus.in:3001/app/predictor-advanced';
-    else
-      url = 'https://counsellinggurus.in:3001/app/predictor-mains';
+    if(bds==1)
+     url = 'http://10.0.0.4:3001/predictor/bds';
+    else if(mbbs==1)
+      url = 'http://10.0.0.4:3001/predictor/mbbs';
+    else if(vet==1)
+      url = 'http://10.0.0.4:3001/predictor/vet';
     await http.post(
       url,
        body: map,
@@ -287,31 +274,6 @@ class _CollegePredictorState extends State<CollegePredictor> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: 20, vertical: 10),
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(15),
-                                      border: Border.all(
-                                          color: Colors.orangeAccent),
-                                    ),
-                                    child: Padding(
-                                      padding:
-                                      EdgeInsets.only(left: 40, right: 40),
-                                      child: DropdownButton(
-                                        iconEnabledColor: Colors.black,
-                                        iconDisabledColor: Colors.black,
-                                        hint: Text("Select Gender"),
-                                        isExpanded: true,
-                                        value: selectedItem1,
-                                        items: genderDropDown,
-                                        onChanged: onChangeDropDownItem1,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
                                   padding: EdgeInsets.all(10),
                                   child: Column(
                                     children: <Widget>[
@@ -321,12 +283,13 @@ class _CollegePredictorState extends State<CollegePredictor> {
                                         child: ListTile(
                                           onTap: (){
                                             setState(() {
-                                              mains=1;
-                                              advanded=0;
+                                              bds=1;
+                                              mbbs=0;
+                                              vet=0;
                                             });
                                           },
-                                          leading: (mains==0)?Icon(Icons.radio_button_unchecked,color: Colors.white,):Icon(Icons.radio_button_checked,color: Colors.white,),
-                                          title: Text("JEE MAINS",style: GoogleFonts.aBeeZee(fontSize: 14,color: Colors.white)),
+                                          leading: (bds==0)?Icon(Icons.radio_button_unchecked,color: Colors.white,):Icon(Icons.radio_button_checked,color: Colors.white,),
+                                          title: Text("BDS",style: GoogleFonts.aBeeZee(fontSize: 14,color: Colors.white)),
                                         ),
                                       ),
                                       Padding(
@@ -334,12 +297,27 @@ class _CollegePredictorState extends State<CollegePredictor> {
                                         child: ListTile(
                                           onTap: (){
                                             setState(() {
-                                              mains=0;
-                                              advanded=1;
+                                              bds=0;
+                                              mbbs=1;
+                                              vet=0;
                                             });
                                           },
-                                          leading: (advanded==0)?Icon(Icons.radio_button_unchecked,color: Colors.white,):Icon(Icons.radio_button_checked,color: Colors.white,),
-                                          title: Text("JEE ADVANCED",style: GoogleFonts.aBeeZee(fontSize: 14,color: Colors.white)),
+                                          leading: (mbbs==0)?Icon(Icons.radio_button_unchecked,color: Colors.white,):Icon(Icons.radio_button_checked,color: Colors.white,),
+                                          title: Text("MBBS",style: GoogleFonts.aBeeZee(fontSize: 14,color: Colors.white)),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.only(left: 10,right: 10),
+                                        child: ListTile(
+                                          onTap: (){
+                                            setState(() {
+                                              bds=0;
+                                              mbbs=0;
+                                              vet=1;
+                                            });
+                                          },
+                                          leading: (vet==0)?Icon(Icons.radio_button_unchecked,color: Colors.white,):Icon(Icons.radio_button_checked,color: Colors.white,),
+                                          title: Text("VET",style: GoogleFonts.aBeeZee(fontSize: 14,color: Colors.white)),
                                         ),
                                       ),
                                     ],
@@ -350,16 +328,17 @@ class _CollegePredictorState extends State<CollegePredictor> {
                                   child: RaisedButton(
                                     onPressed: () {
                                       setState(() {
-                                        if(myController.text!=''&&selectedItem!=null&&selectedItem1!=null&&(mains==1||advanded==1))
+                                        if(myController.text!=''&&selectedItem!=null&&(bds==1||vet==1||mbbs==1))
                                         {
                                           availablecolleges.clear();
                                           submitClicked='loader';
-                                           createColleges(myController.text,selectedItem,selectedItem1);
+                                          category = "\""+selectedItem+"\"";
+                                           createColleges(myController.text,category);
                                            print(availablecolleges.length);
                                         }
                                         else
                                           {
-                                            Toast.show("Please sellect all fields for accurate results.", context,duration: Toast.LENGTH_LONG,gravity: Toast.BOTTOM);
+                                            Toast.show("Please select all fields for accurate results.", context,duration: Toast.LENGTH_LONG,gravity: Toast.BOTTOM);
                                           }
                                       });
                                     },
@@ -495,19 +474,11 @@ class Colleges extends StatelessWidget {
             children: <Widget>[
               Padding(
                 padding: EdgeInsets.all(10),
-                child: Text(topColleges[index]['Institute Name'],style: GoogleFonts.aBeeZee(fontSize: 20,fontWeight: FontWeight.bold),),
+                child: Text(topColleges[index]['clgName'],style: GoogleFonts.aBeeZee(fontSize: 20,fontWeight: FontWeight.bold),),
               ),
               Padding(
-                padding: EdgeInsets.all(10),
-                child:  Text(topColleges[index]['Branch Name'],style: GoogleFonts.aBeeZee(fontSize: 16,fontWeight: FontWeight.w300),),
-              ),
-              Padding(
-                padding: EdgeInsets.all(10),
-                child: Text('Opening Rank- '+topColleges[index]['Openning Rank'],style: GoogleFonts.aBeeZee(fontSize: 16,fontWeight: FontWeight.w300),),
-              ),
-              Padding(
-                padding: EdgeInsets.all(10),
-                child: Text('Closing Rank- '+topColleges[index]['Closing Rank'],style: GoogleFonts.aBeeZee(fontSize: 16,fontWeight: FontWeight.w300),),
+                padding: EdgeInsets.all(20),
+                child: Text('Closing Rank:'+topColleges[index]['gen'],style: GoogleFonts.aBeeZee(fontSize: 16,fontWeight: FontWeight.w200),),
               ),
               SizedBox(
                 height: 10,
@@ -519,6 +490,23 @@ class Colleges extends StatelessWidget {
     );
   }
   Widget gridCard1(int index,BuildContext context) {
+    var mystring = '';
+    if(category=='\"GEN\"')
+      {
+        mystring = availablecolleges[index].b;
+      }
+    else if(category=='\"SC\"')
+      {
+        mystring = availablecolleges[index].d;
+      }
+    else if(category=='\"ST\"')
+    {
+      mystring = availablecolleges[index].e;
+    }
+    else if(category=='\"OBC\"')
+    {
+      mystring = availablecolleges[index].c;
+    }
     return Padding(
       padding: EdgeInsets.all(20),
       child: Material(
@@ -534,19 +522,11 @@ class Colleges extends StatelessWidget {
             children: <Widget>[
               Padding(
                 padding: EdgeInsets.all(10),
-                child: Text(availablecolleges[index].b,style: GoogleFonts.aBeeZee(fontSize: 20,fontWeight: FontWeight.bold),),
+                child: Text(availablecolleges[index].a,style: GoogleFonts.aBeeZee(fontSize: 20,fontWeight: FontWeight.bold),),
               ),
               Padding(
-                padding: EdgeInsets.all(10),
-                child:  Text(availablecolleges[index].c,style: GoogleFonts.aBeeZee(fontSize: 16,fontWeight: FontWeight.w300),),
-              ),
-              Padding(
-                padding: EdgeInsets.all(10),
-                child: Text('Opening Rank- '+availablecolleges[index].g,style: GoogleFonts.aBeeZee(fontSize: 16,fontWeight: FontWeight.w300),),
-              ),
-              Padding(
-                padding: EdgeInsets.all(10),
-                child: Text('Closing Rank- '+availablecolleges[index].h,style: GoogleFonts.aBeeZee(fontSize: 16,fontWeight: FontWeight.w300),),
+                padding: EdgeInsets.all(20),
+                child: Text('Closing Rank:'+mystring,style: GoogleFonts.aBeeZee(fontSize: 16,fontWeight: FontWeight.w200),),
               ),
               SizedBox(
                 height: 10,

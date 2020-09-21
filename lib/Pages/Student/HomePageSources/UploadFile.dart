@@ -1,20 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:toast/toast.dart';
-
-
 class UploadFile extends StatefulWidget {
   @override
   _UploadFile createState() => new _UploadFile();
 }
-final string = ["Profile Image","Class 10 Marksheet","Class 12 Marksheet","Aadhar Card","Jee Mains Admit Card","Jee Advance Admit Card","Category Certificate","Pwd Certificate","Income Certificate","Other Caste Certificate"];
+final string = ["Allotment Letter by MCI/VCI/AYUSH","Application Form","Admit Card","Rank Card","Adhaar Card/Voter ID/Passport","Date of Birth Certificate","10+2 Marksheet","Secondary School Examination Certificate","10+2 Certificate","Character Certificate","Migration/Transfer Certificate","Gap Affidavit","Income and Caste Certificate(if applicable)"];
 class _UploadFile extends State<UploadFile> {
   @override
   void initState() {
     super.initState();
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,6 +41,9 @@ class _UploadFile extends State<UploadFile> {
             MyTile(7, context),
             MyTile(8, context),
             MyTile(9, context),
+            MyTile(10, context),
+            MyTile(11, context),
+            MyTile(12, context),
             Container(
               height: 2,
               width: MediaQuery.of(context).size.width,
