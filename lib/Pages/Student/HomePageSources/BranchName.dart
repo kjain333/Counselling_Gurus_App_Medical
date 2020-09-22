@@ -27,163 +27,21 @@ final string70 = ['Computer Science Engineering','Information Technology','Robot
 final string80 = ['Ceramic','Civil','Construction','Structural Engineering'];*/
 var branchdata = [
     {
-      "Branch Name": "Aerospace\nEngineering",
-      "PPT Link": "https://docs.google.com/presentation/d/11u7knpVZjKcXWuhXz5XTRmEdyNQmH7iY/export/pdf"
+      "Branch Name": "Bachelor of\nDental\nSurgery",
+      "PPT Link": "https://docs.google.com/presentation/d/1jweDBlYMnFTW4E7HaXq5IfeI23dk5_2rKr41eSG-doA/export/pdf"
     },
-    {
-      "Branch Name": "Agricultural\nEngineering",
-      "PPT Link": "https://docs.google.com/presentation/d/1awjBo_O6Dl1E68eUzMENq0_J2SOhmYYZ2qkZQY5Ozww/export/pdf"
-    },
-    {
-      "Branch Name": "Automobile\nEngineering",
-      "PPT Link": "https://docs.google.com/presentation/d/1EFE_f5MuPfcWCK5wA_2V2FW1zy6RUT6K/export/pdf"
-    },
-    {
-      "Branch Name": "Biochemical\nEngineering",
-      "PPT Link": "https://docs.google.com/presentation/d/1cUCfkuOVRxI5mbkoNSqUpagSElQ1GYUX/export/pdf"
-    },
-    {
-      "Branch Name": "Biomedical\nEngineering",
-      "PPT Link": "https://docs.google.com/presentation/d/1eUhyBoLEUY7gMviWb7w5maXQYaQ08OBEER1uAh7EwLg/export/pdf"
-    },
-    {
-      "Branch Name": "Biotechnology\nEngineering",
-      "PPT Link": "https://docs.google.com/presentation/d/1mSrWMefaIkErR6pG5w42JgDMn_8K4S6CE1QnU0QQWeY/export/pdf"
-    },
-    {
-      "Branch Name": "Ceramic\nEngineering"
-    },
-    {
-      "Branch Name": "Chemical\nEngineering",
-      "PPT Link": "https://docs.google.com/presentation/d/1FRx-C7yXSQzxpBIwTPGaI_NBl4NjrFcX/export/pdf"
-    },
-    {
-      "Branch Name": "Civil\nEngineering",
-      "PPT Link": "https://docs.google.com/presentation/d/1ttbo_R6Pj8eRa5Uw-ZivxJSlYLyAx-33pOuJ5_rohPI/export/pdf"
-    },
-    {
-      "Branch Name": "Communications\nEngineering"
-    },
-    {
-      "Branch Name": "Computer\nEngineering",
-      "PPT Link": "https://docs.google.com/presentation/d/1XxcKUn9MtfMQvRwS9p_iFJqSQxnHBQ6M/export/pdf"
-    },
-    {
-      "Branch Name": "Computer\nScience\nEngineering",
-      "PPT Link": "https://docs.google.com/presentation/d/18GVObmvIrQsq-Qw4AhS2MVSgdHSoz4G-/export/pdf"
-    },
-    {
-      "Branch Name": "Construction\nEngineering",
-      "PPT Link": "https://docs.google.com/presentation/d/1sSvU8eVVo9Y2yakaqpXmO60_M6g8_6GX/export/pdf"
-    },
-    {
-      "Branch Name": "Electrical\nEngineering",
-      "PPT Link": "https://docs.google.com/presentation/d/18-6VHLEZRSMJoZZOrN5ZoS01piG6j_o4/export/pdf"
-    },
-    {
-      "Branch Name": "Electronics &\nCommunication\nEngineering",
-      "PPT Link": "https://docs.google.com/presentation/u/1/d/1_QXba0mA3YMLraMBXoGiFuIeByM48Xl/export/pdf"
-    },
-    {
-      "Branch Name": "Electrical and\nInstrumentation\nEngineering",
-      "PPT Link": "https://docs.google.com/presentation/d/1jSlI9Aj0gxpWlokZ711Gkr5YTy6phjMz/export/pdf"
-    },
-    {
-      "Branch Name": "Electronics\nEngineering",
-      "PPT Link": "https://docs.google.com/presentation/d/1ztM02S25SRoh6oc9-QiuhHe475BZnnUqexDH4V1xquM/export/pdf"
-    },
-    {
-      "Branch Name": "Electronics and\nInstrumentation\nEngineering",
-      "PPT Link": "https://docs.google.com/presentation/d/1NQQ00rJE0487iT1sgcOTAN3MPsEW4UIMxd94b8ECous/export/pdf"
-    },
-    {
-      "Branch Name": "Electronics &\nTelecommunication\nEngineering",
-      "PPT Link": "https://docs.google.com/presentation/u/1/d/1KpOGWS_3H801g7G7AMmgE9EkaEiBeyk-/export/pdf"
-    },
-    {
-      "Branch Name": "Engineering\nPhysics",
-      "PPT Link": "https://docs.google.com/presentation/d/1pNCvp1CWiC77XcNeC1FK1RbHrneKlK8ZknbYkZFEN-s/export/pdf"
-    },
-    {
-      "Branch Name": "Environmental\nEngineering",
-      "PPT Link": "https://docs.google.com/presentation/d/1-lOqI56DN61bpudye5tUaQxHXcT1BO_7/export/pdf"
-    },
-    {
-      "Branch Name": "Food\nEngineering",
-      "PPT Link": "https://docs.google.com/presentation/d/1clFcgfJXlTIDJcL-hzOHavxUZlkU3LdD/export/pdf"
-    },
-    {
-      "Branch Name": "Industrial\nEngineering",
-      "PPT Link": "https://docs.google.com/presentation/d/10biNXVSDPPxApgCq5AQ3SLVc0rzI8K5o0BM2PSNe_ng/export/pdf"
-    },
-    {
-      "Branch Name": "Industrial and\nProduction\nEngineering",
-      "PPT Link": "https://docs.google.com/presentation/u/1/d/1FaWdGrDORCB7p3I8Uex67A4LAAw7oYVF/export/pdf"
-    },
-    {
-      "Branch Name": "Information\nTechnology\nEngineering",
-      "PPT Link": "https://docs.google.com/presentation/d/1VuI7KeNn05fg1wl1xOhcK2xE9hNy7wkN/export/pdf"
-    },
-    {
-      "Branch Name": "Instrumentation\nEngineering",
-      "PPT Link": "https://docs.google.com/presentation/d/1SHysoWSJdbJpQETGEYaemsg8AqRwQRYT/export/pdf"
-    },
-    {
-      "Branch Name": "Leather\nTechnology",
-      "PPT Link": "https://docs.google.com/presentation/u/1/d/16UvUhGyhNEdWkmmJWtxyqesXI2x5RRxR/export/pdf"
-    },
-    {
-      "Branch Name": "Material\nEngineering",
-      "PPT Link": "https://docs.google.com/presentation/d/1DXjfOMePHx4l_619LgmFjz3MKXkI9ocKTGsvul7dZA8/export/pdf"
-    },
-    {
-      "Branch Name": "Man Made\nFibre\nTechnology",
-      "PPT Link": "https://docs.google.com/presentation/d/1MhkLWGTYSV6l4QuB0LPnvGYJty4_ujdpMwASzkhZtk4/export/pdf"
-    },
-    {
-      "Branch Name": "Marine\nEngineering",
-      "PPT Link": "https://docs.google.com/presentation/d/1OiQ7t3bCfENAQl4_dgqa8PJbCvLDf5wG/export/pdf"
-    },
-    {
-      "Branch Name": "Mathematics",
-      "PPT Link": "https://docs.google.com/presentation/d/1L5O9HqmMK2h4A2b9w82-vYHHwl3N_E2RQGVx0gQ9M-k/export/pdf"
-    },
-    {
-      "Branch Name": "Mechatronics\nEngineering",
-      "PPT Link": "https://docs.google.com/presentation/d/122lixZVLCc8GVs6BZ8DZ_AssuAQO07VX/export/pdf"
-    },
-    {
-      "Branch Name": "Metallurgical\nEngineering",
-      "PPT Link": "https://docs.google.com/presentation/d/1sAA8QEnUUfSaEaWmM74UbNTaHRy9UJ5t/export/pdf"
-    },
-    {
-      "Branch Name": "Mining\nEngineering",
-      "PPT Link": "https://docs.google.com/presentation/d/1uY_EcNEjptNht5jfJrbhOd8R1a1rzm3SFn1cL1B9nR0/export/pdf"
-    },
-    {
-      "Branch Name": "Oil\nTechnology",
-      "PPT Link": "https://docs.google.com/presentation/d/17J3WrN_tEKnYulNfCEii-uc-Q-c4hTLt/export/pdf"
-    },
-    {
-      "Branch Name": "Petroleum\nEngineering",
-      "PPT Link": "https://docs.google.com/presentation/d/1nAWJonhjTQXtF8zJBSutqCWfRc2AB8NM/export/pdf"
-    },
-    {
-      "Branch Name": "Plastic\nTechnology",
-      "PPT Link": "https://docs.google.com/presentation/d/156iVE1ksV7Es5BeVE105Ys_XIccFr-269UeR4nxyKzo/export/pdf"
-    },
-    {
-      "Branch Name": "Power\nEngineering",
-      "PPT Link": "https://docs.google.com/presentation/d/18qMA0Dkf4qG3IbZeqKjQqQvqCjwLAczI/export/pdf"
-    },
-    {
-      "Branch Name": "Production\nEngineering",
-      "PPT Link": "https://docs.google.com/presentation/d/1Prd-US6GFvcmgF51jRpI-SXuTmy3Dz4e/export/pdf"
-    },
-    {
-      "Branch Name": "Robotics\nEngineering",
-      "PPT Link": "https://docs.google.com/presentation/d/1CtonHILak6FiOsAvgmm68Jw8N_oR-xfh/export/pdf"
-    },
+  {
+    "Branch Name": "Homeopathy",
+    "PPT Link": "https://docs.google.com/presentation/d/1I5iz3kzYUsyFk88WCJQnaqYRh_pkc7y7sjRta_84PLs/export/pdf"
+  },
+  {
+    "Branch Name": "Bachelor of\nMedicine,\nSurgery",
+    "PPT Link": "https://docs.google.com/presentation/d/1ujFV_Af8HFC7YzO2_IrhIeXDfWjO2pwvTMjwI8tX6TM/export/pdf"
+  },
+  {
+    "Branch Name": "Veterinary",
+    "PPT Link": "https://docs.google.com/presentation/d/1n4XF1TcPbYQ5wO0_N2r95i8Sm0zx3U8TOX7i42IS0eo/export/pdf"
+  },
     ];
 List<String> stringfinal = new List();
 List<String> pptlinks = new List();
@@ -199,7 +57,9 @@ class _BranchNameState extends State<BranchName> {
   final key = new GlobalKey<AutoCompleteTextFieldState<String>>();
   @override
   void initState(){
-
+    stringfinal.clear();
+    pptlinks.clear();
+    string.clear();
     for(int i=0;i<branchdata.length;i++)
       {
         print(branchdata[i]['PPT Link'].toString());

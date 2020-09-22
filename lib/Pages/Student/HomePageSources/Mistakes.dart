@@ -5,74 +5,36 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:swipedetector/swipedetector.dart';
 import '../../../Resources/Colors.dart' as color;
 var colors = [color.orange5,color.pink9];
-var dataString = [["Getting overconfident and relaxed after scoring good in JEE Main-1.",
-"Getting laid back and hopeless if the result in JEE Main-1 wasn't so good.",
-"Focusing completely on JEE Advanced and forgetting about JEE Main-2 after Main-1.",
-"Focusing completely on JEE Main-2 and forgetting about Advanced after Main-1.",
-"Not applying for any other exam than JEE (such as COMEDK, WBJEE, BITSAT, VITEEE)",
-"Applying for too many entrance exams.",
-"Spending too much time on relatively less important topics and hence ignoring more important topics.",
-"Not following a proper study schedule while preparing for entrance examinations.",
-"Making a too strict/unrealistic schedule which can't be followed properly.",
-"Not checking dates of various entrance examinations before applying as they may clash sometimes.",
-"Not considering other entrance exams, which one has applied for, when filling exam centre preferences (for example WBJEE is conducted in West Bengal, so if there isn't sufficient time between 2 exams then choose a location which is suitable for both exams)."
+var dataString = [[
+  "Do the registration very carefully as there is no chance for correction in the counselling registration.",
+"Check the college status and fee structure carefully before filling the any choice because sometimes student fill the deemed university with good rank and then they get electric shock",
+"consider review in addition to ranks, because sometimes you get totally different situation. Medical ranks are not officially declared in a right manner so different websites create mess with rank.",
+"Always ask the counsellor or senior before proceeding with choice feeling.",
+"Wait until the last situation because mop up are the jackpots",
+"Check your documents carefully before check their validity match your documents like certificates of caste or income with prescribed performa.",
+"Being less technically sound creates a big problem",
+"Unable to make e payments also create issue for some student as counselling fees for all India 10k which is huge amount so make payment carefully",
+"Always stay away from agent they might put you in a big trouble",
+"Sticking to only one course sometimes leads you to a college where pursuing that course didn’t give any benefit except regret."
 ],[
-"Not registering for any counselling other than JoSAA.",
-"Not following state counsellings and missing the dates to apply for them.",
-"Not researching or doing ground-work on the colleges/branches you are considering - research about everything like campus environment, location, facilities, placement stats, alumni network etc.",
-"Researching only core branches during choice filling and ignoring any other branch.",
-"Not checking past years' opening and closing ranks.",
-"Choosing strictly based on past years' opening and closing ranks, instead go for a wider range of ranks around your own rank.",
-"Totally preferring branch over college or college over branch - Both of them matter, a good branch in a not so good college is worth it so, keep a balance between branch and college.",
-"Being too crazy about brand value - Many NITs are better than some IITs so don't ignore NITs/GFTIs just because you're getting admission in IIT, it has to be a good IIT.",
-"Sacrificing a branch even if you're really interested in it - really interested means you should have proper knowledge of the branch and should not have just heard rumors about how good that branch is.",
-"Choosing a branch which doesn't suit you - check the course curriculum of whatever branch you're opting, if you really don't like biology at all or hate biology then choosing biotechnology won't do you any good.",
-],[
-"IIT Patna is not bad just because it is in Bihar and biotechnology students don't study just biology.",
-"Considering location as a major factor while choosing a college - location can be a factor but it shouldn't be a major factor, in the end a good college matters no matter how far away or where it is situated.",
-"Choosing a branch/college just because of peer pressure - don't go for any branch or college just because your friends/cousins study there or because your uncle/aunty/parents suggested it because that choice will always stay with you so, do proper research and choose what's best for you.",
-"Getting crazy about a particular branch - everyone is going for CS doesn't mean you have to go for it too or lose hope if you're not getting CS. Mechanical in a good IIT/NIT is much better than CS in a private college.",
-"Ignoring dual degree programs completely while choice filling.",
-"Relying too much on branch change - branch change is possible but it's not very easy. Don't take a risk just because you think you will change your branch.",
-],[
-"Taking college rankings too seriously.",
-"Believing rumors about a particular college or branch - don't judge a particular branch or college just because you've heard something about it, do proper research about everything and rely on facts instead of rumors.",
-"Prioritizing choices which you'll get easily during choice filling - instead fill the choices which you have a less chance of getting on the top by keeping a margin of a couple hundred ranks around your ranks.",
-"Not filling choices in order of your preference.",
-"Not choosing a college considering your future plans - if you want to pursue CAT, UPSC etc then choose a college where good coaching classes are easily accessible however do not choose solely based on this factor.",
-"Filling just a few choices - fill as many choices as you can, there is no limit. The more you fill the more your chances of getting a good college are."
-],[
-  "Don't go for anything your uncle or cousin says. Consult someone who is an expert in this field and is familiar with the current system. Your uncle may have done his B.Tech from IIT 10 years ago but that doesn't mean he is familiar with the current system.",
-  "Asking a first yearite about their college and branch - first yearites don't have too much knowledge about anything, most of what they know are rumors and their own opinions rather than facts. Contact 2nd/3rd yearites or people who have recently graduated or is about to graduate, they'll give you much better and legitimate information.",
-  "Falling prey to blogs/articles on quora and other websites by people who are unqualified to properly access the topic",
-"Go for more opinions, contact as many people as possible who are well qualified to answer your queries.",
-"Relying totally on other people and not doing your own research - while asking people for advice is good, you should also do your own research. It'll help you to get more clearance and ask more queries.",
-"Not following the respective counselling regularly for updates.",
-"Missing or ignoring mock counselling rounds.",
-"Missing important dates of counselling.",
-"Locking choices without being sure or without doing proper research about them.",
-"Not rearranging choices after filling them once - keep on rearranging choices as you get more and more insights.",
-"Not utilizing the time given during counselling and being in a hurry - utilize all the time, till the last moment and hurrying won't get you anywhere.",
-"Not saving changes during choice filling."
-],[
-"Avoid any last minute rush as it may result in you forgetting some important things.",
-"Forgetting some document(s) when attending physical counselling.",
-"Not keeping all the required documents updated.",
-"Not arranging documents in the prescribed format.",
-"Issuing authority of certificates not being proper or as prescribed by the respective counselling - sometimes the certificates for example - caste certificate can also be issued by 'naib tehsildar' in some regions but the counselling may ask for the signature of 'tehsildar' or an authority above it.",
-"Bringing wrong/unnecessary documents for physical counselling in place of necessary ones.",
-"Not keeping sufficient amounts of copies of each document - keep at least one or two copies more than what is asked for each document.",
-"Not keeping documents properly arranged and managed - mismanagement of documents may lead to some documents going missing and last minute rushes."
-],[
-"Getting confused between FLOAT, SLIDE and FREEZE option during counselling - research about everything and don't get confused at all. Clear everything related to counselling well before appearing for it.",
-"Freezing a branch by mistake.",
-"Choosing the slide option by mistake - this is the worst mistake you can do as you won't get any chance again and will be ruled out of the entire counselling process.",
-"Going to the wrong college for document verification in physical counselling - if you are allotted an IIT then you have to go to an IIT for document verification not in an NIT and vice versa.",
-"Getting confused in when to go.for double verification - you have to go for double verification in physical counselling only when your college shifts from NIT/GFTI to IIT or vice versa i.e. if you chose float on an IIT in a certain round and you got NIT/GFTI in the subsequent round or vice versa only then you have to go for double document verification.",
-"Not bringing proper documents to college for admissions process - don't miss anything, take sufficient copies with you and take all the respective documents required for admission.",
-"Discrepancy in documents presented at the time of counselling and admission.",
+"Directly appearing for counseling without any pre research",
+"Didn’t have updated documents",
+"Being less technically sound",
+"Not being updated",
+"Inability to make online or E – payments",
+"Less knowledge about colleges that what is best suited for the rank",
+"Less knowledge about the courses available",
+"Unable to decide",
+"Pre deciding that whether they will get the college or not",
+"Didn’t exploring all suitable ways of getting admission",
+"Sticking to one course",
+"Sticking to one college",
+"Loss of patience",
+"Getting panic",
+"Skipping different counseling",
+"Fragile mindset"
 ]];
-var string= ["Before College admissions","During Counselling","Judgemental towards particular branch or college","College Rankings","Consulting a non expert"," Required Documents","Getting confused between options during counselling"];
+var string= ["Before College admissions","During Counselling"];
 class AllMistakes extends StatelessWidget{
   @override
   Widget build(BuildContext context) {

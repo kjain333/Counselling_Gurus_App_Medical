@@ -1,34 +1,13 @@
 import 'dart:math';
-//import 'file:///C:/Users/Ralex/Desktop/Counselling_Gurus/lib/Pages/Student/HomePageSources/BranchblogMentor.dart';
-//import 'file:///C:/Users/Ralex/Desktop/Counselling_Gurus/lib/Pages/Student/StartingPages/ChangePassword.dart';
-//import 'file:///C:/Users/Ralex/Desktop/Counselling_Gurus/lib/Pages/Student/HomePageSources/CollegeblogMentor.dart';
-//import 'file:///C:/Users/Ralex/Desktop/Counselling_Gurus/lib/Pages/Student/SideNav/ContactUsMentor.dart';
-//import 'file:///C:/Users/Ralex/Desktop/Counselling_Gurus/lib/Pages/Student/HomePageSources/FAQMentor.dart';
-import 'package:counselling_gurus/Pages/Student/Fragments/News.dart';
 import 'package:counselling_gurus/Pages/Student/HomePageSources/BranchName.dart';
-//import 'package:counselling_gurus/Pages/Student/HomePageSources/BranchblogMentor.dart';
 import 'package:counselling_gurus/Pages/Student/HomePageSources/CollegePredictor.dart';
 import 'package:counselling_gurus/Pages/Student/HomePageSources/NewCollegesList.dart';
 import 'package:counselling_gurus/Pages/Student/HomePageSources/Progress.dart';
 import 'package:counselling_gurus/Pages/Student/HomePageSources/UploadFile.dart';
-import 'package:counselling_gurus/Pages/Student/PdfViewer.dart';
-import 'package:giffy_dialog/giffy_dialog.dart';
-import 'package:counselling_gurus/Pages/Student/HomePageSources/CompleteNews.dart';
 import 'package:counselling_gurus/Pages/Student/HomePageSources/FAQ.dart';
 import 'package:counselling_gurus/Pages/Student/HomePageSources/Mistakes.dart';
-import 'package:counselling_gurus/Pages/Student/HomePageSources/NotesPage.dart';
-import 'package:counselling_gurus/Pages/Student/HomePageSources/RankPredictor.dart';
+import 'package:toast/toast.dart';
 import 'package:url_launcher/url_launcher.dart';
-//import 'file:///C:/Users/Ralex/Desktop/Counselling_Gurus/lib/Pages/Student/HomePageSources/RankPredictorMentor.dart';
-//import 'package:counselling_gurus/Pages/Student/ScheduleMeetingMentor.dart';
-//import 'package:counselling_gurus/Pages/Student/SideNav/ContactUsMentor.dart';
-//import 'package:counselling_gurus/Pages/Student/SideNav/EditProfileMentor.dart';
-//import 'package:counselling_gurus/Pages/Student/SideNav/TermsAndConditionsMentor.dart';
-//import 'package:counselling_gurus/Pages/Student/SideNav/TopMentorsMentor.dart';
-//import 'package:counselling_gurus/Pages/Student/SideNav/feedbackMentor.dart';
-//import 'package:counselling_gurus/Pages/Student/StartingPages/ChangePassword.dart';
-//import 'file:///C:/Users/Ralex/Desktop/Counselling_Gurus/lib/Pages/Student/SideNav/TermsAndConditionsMentor.dart';
-//import 'package:counselling_gurus/components/oval_right_clipper.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
@@ -69,11 +48,6 @@ List<String> buttonHeadings = [
   "Stats",
   "View Progress",
 ];
-
-//   "Experience Counselling",
-//  "Take the Test",
-//  "Verify Documents"
-
 List<IconData> icon = [
   Icons.school,
   Icons.score,
@@ -93,7 +67,7 @@ List<IconData> icon = [
 final Color primary = Colors.white;
 final Color active = Colors.grey.shade800;
 final Color divider = Colors.grey.shade600;
-
+var rank ='';
 final paragraph =
     ["Predict and know the best colleges you can get at your rank.Results are based on previous years' data, student preferences,NIRF rankings and other parameters like placements,college infrastructure and other facilities.",
       "Get your rank calculated based on your percentile with utmost accuracy.These ranks are calculated with the help of complex formula similar to the one used by NTA to calculate AIRs and category ranks of lakhs of students.",
@@ -118,16 +92,107 @@ class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
-
+var rankdata = [
+    {
+      "opening": 720,
+      "closing": 701,
+      "rank": " 1 to 25"
+    },
+    {
+      "opening": 700,
+      "closing": 686,
+      "rank": "26 - 100"
+    },
+    {
+      "opening": 685,
+      "closing": 671,
+      "rank": "101 - 400"
+    },
+    {
+      "opening": 670,
+      "closing": 656,
+      "rank": "401 - 1200"
+    },
+    {
+      "opening": 655,
+      "closing": 641,
+      "rank": "1201 - 2200"
+    },
+    {
+      "opening": 640,
+      "closing": 626,
+      "rank": "2201 - 4000"
+    },
+    {
+      "opening": 625,
+      "closing": 611,
+      "rank": "4001 - 7000"
+    },
+    {
+      "opening": 601,
+      "closing": 600,
+      "rank": "7001 - 9000"
+    },
+    {
+      "opening": 599,
+      "closing": 590,
+      "rank": "9001 - 12500"
+    },
+    {
+      "opening": 589,
+      "closing": 580,
+      "rank": "12501 - 17500"
+    },
+    {
+      "opening": 579,
+      "closing": 570,
+      "rank": "17501 - 20000"
+    },
+    {
+      "opening": 569,
+      "closing": 560,
+      "rank": "20001 - 25000"
+    },
+    {
+      "opening": 559,
+      "closing": 550,
+      "rank": "25001 - 32000"
+    },
+    {
+      "opening": 549,
+      "closing": 540,
+      "rank": "32001 - 40000"
+    }
+    ];
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
+  TextEditingController marks;
   final GlobalKey<ScaffoldState> _key = GlobalKey<ScaffoldState>();
   List<GlobalKey<ScaffoldState>> keys = new List(11);
-
+  void getRank(marks){
+    rank='';
+    marks = int.parse(marks);
+    if(marks>720)
+      marks=720;
+    for(int i=0;i<rankdata.length;i++)
+      {
+        if(marks<=rankdata[i]['opening']&&marks>=rankdata[i]['closing'])
+          {
+            rank = rankdata[i]['rank'];
+            break;
+          }
+      }
+    if(rank=='')
+      rank='50000-100000';
+    setState(() {
+    });
+    showMyrank(context);
+  }
   //final GlobalKey<ScaffoldState> _containerkey = GlobalKey<ScaffoldState>();
   @override
   void initState(){
     super.initState();
+    marks = new TextEditingController();
     for(int i=0;i<11;i++)
     {
         keys[i]= new GlobalKey<ScaffoldState>();
@@ -280,7 +345,7 @@ class _HomePageState extends State<HomePage>
 
 
   Widget gridCard(index) {
-    if(index==6||index==8||index==1||index==2||index==9)
+    if(index==6||index==8||index==2||index==9)
       {
         return Container();
       }
@@ -536,7 +601,7 @@ class _HomePageState extends State<HomePage>
                                   else if (index==4)
                                     Navigator.push(context, MaterialPageRoute(builder: (context)=>FAQ()));
                                   else if (index == 1)
-                                    Navigator.push(context, MaterialPageRoute(builder: (context) => RankPredictor()));
+                                    showRankPredictor();
                                 }),
                           ),
                         ),
@@ -545,6 +610,93 @@ class _HomePageState extends State<HomePage>
                   )
                 ],),
             )));
+  }
+  showRankPredictor(){
+    showDialog(context: context,child: Scaffold(
+      backgroundColor: Colors.transparent,
+      body: Padding(
+        child: Container(
+          width: MediaQuery.of(context).size.width-60,
+          color: Colors.white,
+          child: Wrap(
+            children: <Widget>[
+              Column(
+                children: <Widget>[
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text('Welcome to Rank Prediction',style: GoogleFonts.aBeeZee(fontWeight: FontWeight.w900,fontSize: 20),),
+                  Padding(
+                    padding: EdgeInsets.all(20),
+                    child: Text('Anxious about how you performed? Don\'t worry! Our rank prediction software provides you with most accurate results',style: GoogleFonts.aBeeZee(fontWeight: FontWeight.w300,fontSize: 16),),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text('Enter Your Marks',style: GoogleFonts.aBeeZee(fontSize: 15,fontWeight: FontWeight.w300),),
+                  Padding(
+                    padding: EdgeInsets.only(left: 40,right: 40,top: 5),
+                    child: TextField(
+                      controller: marks,
+                      keyboardType: TextInputType.numberWithOptions(decimal: true),
+                      decoration: InputDecoration(
+                          hintText: 'NEET Marks',
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: (
+                                BorderRadius.circular(15)
+                            ),
+                            borderSide: BorderSide(
+                                color: Colors.grey
+                            ),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: (
+                                BorderRadius.circular(15)
+                            ),
+                            borderSide: BorderSide(
+                                color: Colors.grey
+                            ),
+                          )
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  // Text('Choose your Category',style: GoogleFonts.aBeeZee(fontSize: 15,fontWeight: FontWeight.w300),),
+                  // RadioGroup(),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  RaisedButton(
+                    elevation: 0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    color: Colors.blue,
+                    onPressed: (){
+                      if(marks.text=='')
+                        Toast.show("Please enter marks for accurate results",context,duration: Toast.LENGTH_LONG,gravity: Toast.BOTTOM);
+                      else
+                      {
+                        getRank(marks.text);
+                      }
+
+                      //Assign Rank Here
+                    },
+                    child: Text('Get Your Rank',style: GoogleFonts.aBeeZee(fontWeight: FontWeight.w900,fontSize: 15,color: Colors.white),),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  )
+                ],
+              ),
+            ],
+          )
+        ),
+        padding: EdgeInsets.only(left: 30,right: 30,top: 80,bottom: 30),
+      )
+    ));
   }
   _launchURL(url) async {
     if (await canLaunch(url)) {
@@ -672,4 +824,25 @@ Widget QueryPage(context){
     );
   });
 
+}
+showMyrank(context){
+  showDialog(context: context,child: Scaffold(
+    backgroundColor: Colors.transparent,
+    body: Center(
+      child: Container(
+        height: 100,
+        child: Padding(
+          padding: EdgeInsets.all(20),
+          child: Container(
+            height: 60,
+            child: Padding(
+              padding: EdgeInsets.all(20),
+              child: Text('Your Rank: '+rank,style: GoogleFonts.aBeeZee(fontSize: 16,fontWeight: FontWeight.w300,color: Colors.white),),
+            ),
+            color: Colors.orangeAccent,
+          ),
+        ),
+      ),
+    ),
+  ));
 }

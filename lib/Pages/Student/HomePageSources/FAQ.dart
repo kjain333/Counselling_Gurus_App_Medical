@@ -29,7 +29,7 @@ final answer = ['Ans. For this candidates can refer to previous year seat allotm
   'Ans. Of course yes, such candidates will have to register themselves afresh for the mop-up round of counselling conducted by Deemed/Central universities. However, such candidates will have their security amount forfeited.',
   'Ans. Those candidates who have furnished incomplete or inadequate documents for the admission process of NEET 2020 will not be eligible to participate in the second round.',
   'Ans. It is a guideline by the Honorable Supreme Court that once allotted a seat in the second round of counselling, a candidate cannot vacate it. In case a candidate has been allotted a seat in round 2, they can exit by getting their security money forfeited.',
-  'Ans. No, already registered candidates are not required to re-register themselves for round 2, they can use the login credentials of round 1.,
+  'Ans. No, already registered candidates are not required to re-register themselves for round 2, they can use the login credentials of round 1.',
   'Ans. No, DGHS will send a list of candidates ten times the vacant seats and the Deemed/Central universities will conduct the final stray vacancy round.',
   'Ans. In order to retrieve the password candidates will have to re-enter the details filled in by them at the time of registration. This includes the answer to the security question. Candidates will then be able to set a new password for future logging purposes, provided the data entered by them matches the previously entered information.',
   'Ans. Candidates can opt for as many colleges and courses as many they want at the time of choice filling. The authorities have not put any restrictions or limits on it.',
@@ -39,7 +39,7 @@ final answer = ['Ans. For this candidates can refer to previous year seat allotm
   'Ans. Candidates who join the college allotted to them in the second round of counselling for Deemed/Central universities will not have the upgradation facility. Also, such candidates cannot vacate the AIQ seats. Also, these candidates will no longer be eligible to participate in the further rounds of counselling including the stray round.',
   'Ans. Yes, because in such a situation the seat allotted to you in round 1 will automatically get cancelled. After seat allotment result is published candidates will have to report to the college alloted in round 2 with a relieving letter from the college allotted in round 1 of counselling of NEET.',
   'Ans. If you do not take admission to the seat allotted to you after upgradation then your security money will be forfeited and thereafter you can register yourself afresh for the mop-up round of counselling.'];
-final expanded=[false,false,false,false,false];
+final expanded=[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false];
 class FAQ extends StatefulWidget{
   static _FAQ of(BuildContext context) => context.ancestorStateOfType(const TypeMatcher<_FAQ>());
   @override
