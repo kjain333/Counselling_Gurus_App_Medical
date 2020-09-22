@@ -8,10 +8,29 @@ import 'package:shared_preferences/shared_preferences.dart';
 final icons=[Icons.check_circle,Icons.access_time,Icons.clear];
 final color=[Colors.greenAccent,Colors.orangeAccent,Colors.redAccent];
 final String paragraph = "Here we will have few lines describing each feature ";
-final tasks = ["Branch Research","College Research","Documents Checked","Choice Filling Done","Mock Round 1","Change in choices","Mock Round 2","Change in choices","Counselling Fees Paid","Physical Verification","Freeze,float and Slide","Admission to College","All Tasks Completed!"];
+final tasks = [
+  "Round 1 of NEET UG 2020 Registration, choice filling, and payment",
+  "Round 1 Choice filling/locking Date",
+  "Last Date of Payment",
+  "Choice Filling Process ends on",
+  "Round 1 Seat allotment Date",
+  "Round 1 Result",
+  "Reporting at help centres",
+  "Round 2 of NEET UG 2020 Registration, choice filling and payment",
+  "Round 2 Choice filling/locking Date",
+  "Last date for payment Round 2 Seat allotment processing",
+  "Round 2 Allotment Result",
+  "Reporting at help centres",
+  "Transfer of vacant seats to the respective states",
+  "Fresh registration",
+  "Choice filling/locking Date",
+  "Allotment Result",
+  "Reporting at help Centres",
+  "Thank You! All Tasks Completed"
+];
 int ctr;
-List<int> indexes = new List(12);
-final explain = ["Grab a look at various branches and decide what favours you the most","Research about colleges based on NIRF data","Verify if you have all documents as required by JOSAA during Counselling","Fill suitable choices before the Mock rounds","Carefully understand where you stand among your peers","Utilize the opportunity to change any incorrect arrangement of choices","Carefully understand where you stand among your peers","Utilize the opportunity to change any incorrect arrangement of choices","Pay the counselling fees well before due-date to avoid last minute failures","Carefully understand your reporting center and report well in time","View our Mistakes section to know more about what mishaps student commit during this step","Visit your respective college website to know about deadlines for admission to colleges","Thank you for your cooperation! Don't forget to provide feedback for our services"];
+List<int> indexes = new List(17);
+final explain = tasks;
 class Progress extends StatefulWidget{
   _Progress createState()=> _Progress();
 
@@ -21,14 +40,14 @@ class _Progress extends State<Progress>{
   Future<void> createarr() async{
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     int flag=0;
-    for(int i=0;i<12;i++)
+    for(int i=0;i<17;i++)
     {
       indexes[i]=(sharedPreferences.get(i.toString())==null)?2:sharedPreferences.get(i.toString());
       if(flag==0&&indexes[i]==2)
-        {
-          ctr=i;
-          flag=1;
-        }
+      {
+        ctr=i;
+        flag=1;
+      }
     }
     setState(() {
       state = true;
@@ -36,7 +55,7 @@ class _Progress extends State<Progress>{
   }
   Future<void> destroyarr() async{
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-    for(int i=0;i<12;i++)
+    for(int i=0;i<17;i++)
     {
       sharedPreferences.setInt(i.toString(), indexes[i]);
     }
@@ -65,14 +84,14 @@ class _Progress extends State<Progress>{
         child: Icon(Icons.undo,color: Colors.white,),
         onPressed: (){
           setState(() {
-            if(ctr==12)
+            if(ctr==17)
               ctr--;
             else
-              {
-                indexes[ctr]=2;
-                if(ctr!=0)
-                  ctr--;
-              }
+            {
+              indexes[ctr]=2;
+              if(ctr!=0)
+                ctr--;
+            }
 
           });
         },
@@ -84,11 +103,11 @@ class _Progress extends State<Progress>{
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Colors.purple.shade200,Colors.purple.shade400,Colors.purple.shade700],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-              )
+                gradient: LinearGradient(
+                  colors: [Colors.purple.shade200,Colors.purple.shade400,Colors.purple.shade700],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                )
             ),
           ),
           Positioned(
@@ -152,43 +171,43 @@ class _Progress extends State<Progress>{
             top: 100,
             left: 170,
             child: Container(
-              width: MediaQuery.of(context).size.width-170,
-              child: Row(
-                children: <Widget>[
-                  Container(
-                    width: MediaQuery.of(context).size.width-270,
-                    child: Text(explain[ctr],style: GoogleFonts.aBeeZee(fontSize: 15,color: Colors.white,),),
-                  ),
-                  Wrap(
-                    children: <Widget>[
-                      IconButton(
-                        icon: Icon(Icons.check,color: Colors.greenAccent,size: 18,),
-                        onPressed: (){
-                          setState(() {
-                            if(ctr!=12)
-                            {
-                              indexes[ctr]=1;
-                              ctr++;
-                            }
-                          });
-                        },
-                      ),
-                      IconButton(
-                        icon: Icon(Icons.clear,color: Colors.redAccent,size: 18,),
-                        onPressed: (){
-                          setState(() {
-                            if(ctr!=12)
-                            {
-                              indexes[ctr]=3;
-                              ctr++;
-                            }
-                          });
-                        },
-                      ),
-                    ],
-                  )
-                ],
-              )
+                width: MediaQuery.of(context).size.width-170,
+                child: Row(
+                  children: <Widget>[
+                    Container(
+                      width: MediaQuery.of(context).size.width-270,
+                      child: Text(explain[ctr],style: GoogleFonts.aBeeZee(fontSize: 15,color: Colors.white,),),
+                    ),
+                    Wrap(
+                      children: <Widget>[
+                        IconButton(
+                          icon: Icon(Icons.check,color: Colors.greenAccent,size: 18,),
+                          onPressed: (){
+                            setState(() {
+                              if(ctr!=17)
+                              {
+                                indexes[ctr]=1;
+                                ctr++;
+                              }
+                            });
+                          },
+                        ),
+                        IconButton(
+                          icon: Icon(Icons.clear,color: Colors.redAccent,size: 18,),
+                          onPressed: (){
+                            setState(() {
+                              if(ctr!=17)
+                              {
+                                indexes[ctr]=3;
+                                ctr++;
+                              }
+                            });
+                          },
+                        ),
+                      ],
+                    )
+                  ],
+                )
             ),
           ),
           Positioned(
@@ -209,21 +228,6 @@ class _Progress extends State<Progress>{
               ),
             ),
           ),
-          Positioned(
-            bottom: 20,
-            left: MediaQuery.of(context).size.width/2-80,
-            child: Center(
-              child: RaisedButton(
-                child: Padding(
-                  padding: EdgeInsets.all(10),
-                  child: Text("View Deadlines",style: GoogleFonts.aBeeZee(fontSize: 16,fontWeight: FontWeight.w300),),
-                ),
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=> PdfViewer1("https://josaa.nic.in/webinfo/File/GetFile?FileId=3&LangId=P")));
-                },
-              ),
-            )
-          )
         ],
       ),
     );
@@ -233,16 +237,16 @@ class _Progress extends State<Progress>{
 Widget myCard(int index,BuildContext context)
 {
   return Container(
-      width: MediaQuery.of(context).size.width-100,
-      child: ListTile(
-        leading: Container(
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: Colors.white,
-          ),
-          child: Icon(icons[indexes[index]-1],color: color[indexes[index]-1],),
+    width: MediaQuery.of(context).size.width-100,
+    child: ListTile(
+      leading: Container(
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: Colors.white,
         ),
-        title: Text(tasks[index],style: GoogleFonts.aBeeZee(fontWeight: (ctr==index)?FontWeight.bold:FontWeight.w200,fontSize: (ctr==index)?18:15,color: Colors.white),),
+        child: Icon(icons[indexes[index]-1],color: color[indexes[index]-1],),
       ),
+      title: Text(tasks[index],style: GoogleFonts.aBeeZee(fontWeight: (ctr==index)?FontWeight.bold:FontWeight.w200,fontSize: (ctr==index)?18:15,color: Colors.white),),
+    ),
   );
 }

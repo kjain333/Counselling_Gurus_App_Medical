@@ -145,11 +145,11 @@ class _CollegePredictorState extends State<CollegePredictor> {
     final http = new IOClient(ioc);
     var url;
     if(bds==1)
-     url = 'http://10.0.0.4:3001/predictor/bds';
+     url = 'https://counsellinggurus.in:3001/predictor/bds';
     else if(mbbs==1)
-      url = 'http://10.0.0.4:3001/predictor/mbbs';
+      url = 'https://counsellinggurus.in:3001/predictor/mbbs';
     else if(vet==1)
-      url = 'http://10.0.0.4:3001/predictor/vet';
+      url = 'https://counsellinggurus.in:3001/predictor/vet';
     await http.post(
       url,
        body: map,
@@ -160,7 +160,6 @@ class _CollegePredictorState extends State<CollegePredictor> {
        var av = MyCollege.fromJson(mine[i]);
        availablecolleges.add(av);
      }
-
      setState(() {
        print(availablecolleges.length);
        submitClicked = 'true';
