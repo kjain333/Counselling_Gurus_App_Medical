@@ -16,7 +16,6 @@ class CompleteNews extends StatelessWidget{
             innerDistance: -50,
             children: <Widget>[
               Container(
-
                 height: 300,
                 decoration: BoxDecoration(
                     shape: BoxShape.rectangle,
