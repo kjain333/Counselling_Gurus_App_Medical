@@ -89,7 +89,7 @@ class _CollegePredictorState extends State<CollegePredictor> {
   //   }
   // }
 
-  List<String> categoryList = ["OBC", "GEN","SC","ST","Pwd"];
+  List<String> categoryList = ["GEN","SC","ST"];
   List<String> genderList = ["Gender-Neutral", "Female-Only"];
   List<DropdownMenuItem<String>> categoryDropDown;
   List<DropdownMenuItem<String>> genderDropDown;
@@ -227,7 +227,7 @@ class _CollegePredictorState extends State<CollegePredictor> {
                                       style: GoogleFonts.aBeeZee(fontSize: 15),
                                       decoration: InputDecoration(
                                           hintText:
-                                          "Enter Your Category Rank",
+                                          "Enter All India Quota Rank",
                                           filled: true,
                                           fillColor: Colors.white,
                                           contentPadding: EdgeInsets.only(

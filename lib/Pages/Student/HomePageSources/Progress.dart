@@ -228,6 +228,18 @@ class _Progress extends State<Progress>{
               ),
             ),
           ),
+          Positioned(
+              bottom: 20,
+              left: MediaQuery.of(context).size.width/2-120,
+              child: Center(
+
+                  child: Padding(
+                    padding: EdgeInsets.all(10),
+                    child: Text("FOR MBBS STUDENTS ONLY",style: GoogleFonts.aBeeZee(fontSize: 16,fontWeight: FontWeight.w300,color: Colors.white),),
+                  ),
+
+                ),
+          )
         ],
       ),
     );

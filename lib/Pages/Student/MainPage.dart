@@ -4,6 +4,7 @@ import 'package:counselling_gurus/Pages/Student/HomePageSources/Disclaimer.dart'
 import 'package:counselling_gurus/components/oval_right_clipper.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:titled_navigation_bar/titled_navigation_bar.dart';
+import 'package:toast/toast.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:wiredash/wiredash.dart';
 import 'Fragments/HomePage.dart';
@@ -39,6 +40,8 @@ class _MainPageState extends State<MainPage> {
             showFeedback(context);
           else if(index==4)
             Navigator.push(context,MaterialPageRoute(builder: (context)=>Disclaimer()));
+          else
+            Toast.show("Feature Coming Soon!",context,gravity: Toast.BOTTOM,duration: Toast.LENGTH_LONG);
 
         },
         child: Container(

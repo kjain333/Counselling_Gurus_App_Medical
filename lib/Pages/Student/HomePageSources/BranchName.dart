@@ -26,6 +26,10 @@ final string60 = ['Communication','Electrical','Electronics and Communication','
 final string70 = ['Computer Science Engineering','Information Technology','Robotics','Aeronautical','Aerospace','Automobile','Transport'];
 final string80 = ['Ceramic','Civil','Construction','Structural Engineering'];*/
 var branchdata = [
+  {
+    "Branch Name": "MBBS",
+    "PPT Link": "https://docs.google.com/presentation/d/1ujFV_Af8HFC7YzO2_IrhIeXDfWjO2pwvTMjwI8tX6TM/export/pdf"
+  },
     {
       "Branch Name": "Bachelor of\nDental\nSurgery",
       "PPT Link": "https://docs.google.com/presentation/d/1jweDBlYMnFTW4E7HaXq5IfeI23dk5_2rKr41eSG-doA/export/pdf"
@@ -33,10 +37,6 @@ var branchdata = [
   {
     "Branch Name": "Homeopathy",
     "PPT Link": "https://docs.google.com/presentation/d/1I5iz3kzYUsyFk88WCJQnaqYRh_pkc7y7sjRta_84PLs/export/pdf"
-  },
-  {
-    "Branch Name": "Bachelor of\nMedicine,\nSurgery",
-    "PPT Link": "https://docs.google.com/presentation/d/1ujFV_Af8HFC7YzO2_IrhIeXDfWjO2pwvTMjwI8tX6TM/export/pdf"
   },
   {
     "Branch Name": "Veterinary",
