@@ -101,10 +101,10 @@ class _IntroSliderState extends State<IntroSlider> {
                             ),
                             SizedBox(height: 20.0),
                             Center(
-                              child:  Text("An MNNIT Startup",style: GoogleFonts.aBeeZee(color: Colors.indigo,fontSize: 28,fontWeight: FontWeight.bold),),
+                              child:  Text("An MNNIT Allahabad Startup",style: GoogleFonts.aBeeZee(color: Colors.indigo,fontSize: 28,fontWeight: FontWeight.bold),),
                             ),
                             SizedBox(height: 10,),
-                            Text("Fully Developed under Institute Innovation Council. MNNIT Allahabad to ease the admission process",style: GoogleFonts.aBeeZee(color: Colors.white,fontWeight: FontWeight.w200,fontSize: 18),),
+                            Text("Designed and Developed under the Institute Innovation Council Supported by \"Design Innovation Centre\": An initiative of Ministry of Education, Govt. of India",style: GoogleFonts.aBeeZee(color: Colors.white,fontWeight: FontWeight.w200,fontSize: 18),),
                           ],
                         ),
                       ),

@@ -63,7 +63,7 @@ class CompleteNews extends StatelessWidget{
                                 IconButton(
                                     icon: new Icon(Icons.share,color: Colors.amber,),
                                     onPressed: (){
-                                      Share.share(news.heading+'\nDOWNLOAD OUR APP',subject: news.heading);
+                                      Share.share(news.heading+'\nDOWNLOAD OUR APP'+"\nhttps://play.google.com/store/apps/details?id=com.counsellinggurus.counselling_gurus_medical",subject: news.heading);
                                     }
                                 )
 

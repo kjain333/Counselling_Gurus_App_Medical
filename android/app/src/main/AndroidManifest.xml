@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.counselling_gurus_medical">
+    package="com.counsellinggurus.counselling_gurus_medical">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <application

@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:973547809666:android:2c0cad036a4dad4ff73d9b",
         "android_client_info": {
-          "package_name": "com.example.counselling_gurus_medical"
+          "package_name": "com.counsellinggurus.counselling_gurus_medical"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "973547809666-5jk1obf2o0c6hiq1tjg3mhrmp24nthrp.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.counselling_gurus_medical",
+            "package_name": "com.counsellinggurus.counselling_gurus_medical",
             "certificate_hash": "7074e12d0362327612bd06349505535e17b6268b"
           }
         },

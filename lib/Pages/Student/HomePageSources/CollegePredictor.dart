@@ -331,7 +331,7 @@ class _CollegePredictorState extends State<CollegePredictor> {
                                         {
                                           availablecolleges.clear();
                                           submitClicked='loader';
-                                          category = "\""+selectedItem+"\"";
+                                          category = selectedItem;
                                            createColleges(myController.text,category);
                                            print(availablecolleges.length);
                                         }
@@ -490,19 +490,19 @@ class Colleges extends StatelessWidget {
   }
   Widget gridCard1(int index,BuildContext context) {
     var mystring = '';
-    if(category=='\"GEN\"')
+    if(category=='GEN')
       {
         mystring = availablecolleges[index].b;
       }
-    else if(category=='\"SC\"')
+    else if(category=='SC')
       {
         mystring = availablecolleges[index].d;
       }
-    else if(category=='\"ST\"')
+    else if(category=='ST')
     {
       mystring = availablecolleges[index].e;
     }
-    else if(category=='\"OBC\"')
+    else if(category=='OBC')
     {
       mystring = availablecolleges[index].c;
     }

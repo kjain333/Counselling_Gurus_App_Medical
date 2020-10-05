@@ -1,4 +1,4 @@
-package com.example.counselling_gurus_medical
+package com.counsellinggurus.counselling_gurus_medical
 
 import androidx.annotation.NonNull;
 import android.view.WindowManager.LayoutParams;

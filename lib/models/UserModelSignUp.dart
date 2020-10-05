@@ -11,6 +11,7 @@ class UserSignUp{
       "email": email,
       "password": password,
       "mobile": contact,
+      "prepFor": "Medical",
     };
   }
 
