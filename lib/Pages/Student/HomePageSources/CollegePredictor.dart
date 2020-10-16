@@ -89,7 +89,7 @@ class _CollegePredictorState extends State<CollegePredictor> {
   //   }
   // }
 
-  List<String> categoryList = ["GEN","SC","ST"];
+  List<String> categoryList = ["GEN+OBC","SC","ST"];
   List<String> genderList = ["Gender-Neutral", "Female-Only"];
   List<DropdownMenuItem<String>> categoryDropDown;
   List<DropdownMenuItem<String>> genderDropDown;
@@ -163,7 +163,7 @@ class _CollegePredictorState extends State<CollegePredictor> {
      }
 
      //Sorting available College list according to category rank
-     if(b == 'GEN'){
+     if(b == 'GEN+OBC'){
      availablecolleges.sort((i, j) => i.b.compareTo(j.b));
      } else if(b == 'ST') {
        availablecolleges.sort((i, j) => i.e.compareTo(j.e));
@@ -346,6 +346,7 @@ class _CollegePredictorState extends State<CollegePredictor> {
                                           submitClicked='loader';
                                           category = selectedItem;
                                            createColleges(myController.text,category);
+                                           // sortColleges(availablecolleges,category);
                                            print(availablecolleges.length);
                                         }
                                         else
@@ -503,7 +504,7 @@ class Colleges extends StatelessWidget {
   }
   Widget gridCard1(int index,BuildContext context) {
     var mystring = '';
-    if(category=='GEN')
+    if(category=='GEN+OBC')
       {
         mystring = availablecolleges[index].b;
       }
