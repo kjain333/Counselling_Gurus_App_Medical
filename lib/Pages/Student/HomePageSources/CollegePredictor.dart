@@ -137,6 +137,7 @@ class _CollegePredictorState extends State<CollegePredictor> {
   }
   Future<MyCollege> createColleges(a,b) async {
     print(a);
+    print(b);
     var map = new Map<String, dynamic>();
     map['rank'] = a;
     map['category'] = b;
@@ -160,6 +161,18 @@ class _CollegePredictorState extends State<CollegePredictor> {
        var av = MyCollege.fromJson(mine[i]);
        availablecolleges.add(av);
      }
+
+     //Sorting available College list according to category rank
+     if(b == 'GEN'){
+     availablecolleges.sort((i, j) => i.b.compareTo(j.b));
+     } else if(b == 'ST') {
+       availablecolleges.sort((i, j) => i.e.compareTo(j.e));
+     } else if(b == 'SC') {
+       availablecolleges.sort((i, j) => i.d.compareTo(j.d));
+     } else if(b == 'OBC') {
+       availablecolleges.sort((i, j) => i.c.compareTo(j.c));
+     }
+
      setState(() {
        print(availablecolleges.length);
        submitClicked = 'true';
